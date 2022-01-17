@@ -15,8 +15,11 @@ import red1 from './Stickers/Penn Frame Red.png';
 import red2 from './Stickers/Penn Frame Red 2.png';
 import blue1 from './Stickers/Penn frame blue.png';
 import blue2 from './Stickers/Penn Frame Blue 2.png';
-import filter1 from './Stickers/vertical.png';
+import vertical from './Stickers/vertical.png';
 import addFilter from './Functions/filter'
+import horizontal from './Stickers/horizontal.png';
+import red from './Stickers/red.png';
+import blue from './Stickers/blue.png'; 
 
 const DEFAULT_OPTIONS = [
     {
@@ -123,7 +126,7 @@ function App() {
                     {/* //getImageStyle will be returned by the separate component functions */}
                     <div className="main-image" > {/*change*/}
                         {/* <button class="btn"><i class="fa fa-download"></i> Download</button> */}
-                        <img alt="not found" width={"250px"} src={selectedImage} />
+                        <img alt="" width={"600px"} src={selectedImage} />
 
 
 
@@ -304,16 +307,22 @@ function App() {
 
                                 <div className="filter-items-container">
                                     {/* need to add addFilter function */}
-                                    <img className="sticker" alt="filter1" src={filter1} onClick={() => {
+                                    <img className="sticker" alt="vertical" src={vertical} onClick={() => {
                                         setPreviousImage(JSON.parse(JSON.stringify(selectedImage)));
                                         addFilter(selectedImage, "vertical", image =>setSelectedImage(image))
                                         }}></img>
-                                    {/* <img className="sticker" alt="red2" src={red2} onClick={() => addFrame(selectedImage, "red2", 100, 100, 200, 200, image => setSelectedImage(image))}></img>
-                                    <img className="sticker" alt="blue1" src={blue1} onClick={() => addFrame(selectedImage, "blue1", 100, 100, 200, 200, image => setSelectedImage(image))}></img>
-                                    <img className="sticker" alt="blue2" src={blue2} onClick={() => addFrame(selectedImage, "blue2", 100, 100, 200, 200, image => setSelectedImage(image))}></img> */}
-                                    {/* <button class="button3" onClick={() => addFilter(selectedImage, "./Stickers/testFrame.png", image => setSelectedImage(image))}>Add Filter</button> */}
-
-
+                                     <img className="sticker" alt="horizontal" src={horizontal} onClick={() => {
+                                        setPreviousImage(JSON.parse(JSON.stringify(selectedImage)));
+                                        addFilter(selectedImage, "horizontal", image =>setSelectedImage(image))
+                                        }}></img>
+                                     <img className="sticker" alt="red" src={red} onClick={() => {
+                                        setPreviousImage(JSON.parse(JSON.stringify(selectedImage)));
+                                        addFilter(selectedImage, "red", image =>setSelectedImage(image))
+                                        }}></img>
+                                     <img className="sticker" alt="blue" src={blue} onClick={() => {
+                                        setPreviousImage(JSON.parse(JSON.stringify(selectedImage)));
+                                        addFilter(selectedImage, "blue", image =>setSelectedImage(image))
+                                        }}></img>
                                 </div>
 
 
