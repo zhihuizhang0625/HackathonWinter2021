@@ -16,13 +16,13 @@ async function addSticker(firstImage, secondString, sizeX, sizeY, locX, locY, ca
         let first = await jimp.read(firstImage);
         //based on if statement, read sticker 
         let second = ""; 
-        if (secondString == "mask") {
+        if (secondString === "mask") {
             second = await jimp.read(mask);
-        } else if (secondString == "pennHeart") {
+        } else if (secondString === "pennHeart") {
             second = await jimp.read(pennHeart); 
-        } else if (secondString == "quakers") {
+        } else if (secondString === "quakers") {
             second = await jimp.read(quakers); 
-        } else if (secondString == "rainbow") {
+        } else if (secondString === "rainbow") {
             second = await jimp.read(rainbow); 
         } else {
             second = await jimp.read(pennLogo); 
@@ -34,6 +34,9 @@ async function addSticker(firstImage, secondString, sizeX, sizeY, locX, locY, ca
         const height = first.bitmap.height;
         const xCoord = (locX/100) * width;
         const yCoord = (locY/100) *height;
+        const xSize = width * 0.1;
+        const ySize = width * 0.1;
+        second = second.resize(xSize, ySize)
         first.composite(second, xCoord, yCoord);
         //export 
         /*first.write("test.png", function() {

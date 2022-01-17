@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import './App.css';
-import { join } from "path";
-import Slider from './Components/Slider'
 import SidebarItem from './Components/SidebarItem'
 import addFrame from './Functions/frame'
 import addSticker from './Functions/sticker'
@@ -38,17 +36,16 @@ const DEFAULT_OPTIONS = [
 ]
 function App() {
 
-    const [selectedOptionIndex, setSelectedOptionIndex] = useState(0)
-    const [options, setOptions] = useState(DEFAULT_OPTIONS)
+    const [selectedOptionIndex] = useState(0)
+    const [options] = useState(DEFAULT_OPTIONS)
     const [previousImage, setPreviousImage] = useState(null);
     const [mode, setMode] = useState('Sticker');
-    const selectedOption = options[selectedOptionIndex]
     const [selectedImage, setSelectedImage] = useState(null);
     const [xSlider, setXSlider] = useState(50);
     const [ySlider, setYSlider] = useState(50);
 
 
-    const [axisX, setAxisX] = useState({
+    /*const [axisX, setAxisX] = useState({
         name: 'axisX',
         key: 0,
         value: 50,
@@ -67,7 +64,7 @@ function App() {
             max: 100
         },
         unit: '%'
-    })
+    }) */
 
     // const axisX = () => {
 
@@ -243,19 +240,19 @@ function App() {
 
                                         <img className="sticker" alt="rainbow" src={rainbow} onClick={() =>{
                                             setPreviousImage(JSON.parse(JSON.stringify(selectedImage)));
-                                            addSticker(selectedImage, "rainbow", 100, 100, xSlider, ySlider, image => setSelectedImage(image))}}></img>
+                                            addSticker(selectedImage, "rainbow", 100, 100, xSlider, 100 -ySlider, image => setSelectedImage(image))}}></img>
                                         <img className="sticker" alt="upennLogo" src={upennLogo} onClick={() => {
                                             setPreviousImage(JSON.parse(JSON.stringify(selectedImage)));
-                                            addSticker(selectedImage, "upennLogo", 100, 100, xSlider, ySlider, image => setSelectedImage(image))}}></img>
+                                            addSticker(selectedImage, "upennLogo", 100, 100, xSlider, 100 - ySlider, image => setSelectedImage(image))}}></img>
                                         <img className="sticker" alt="pennheart" src={pennHeart} onClick={() => {
                                             setPreviousImage(JSON.parse(JSON.stringify(selectedImage)));
-                                            addSticker(selectedImage, "pennHeart", 100, 100, xSlider, ySlider, image => setSelectedImage(image))}}></img>
+                                            addSticker(selectedImage, "pennHeart", 100, 100, xSlider,100 - ySlider, image => setSelectedImage(image))}}></img>
                                         <img className="sticker" alt="mask" src={mask} onClick={() => {
                                             setPreviousImage(JSON.parse(JSON.stringify(selectedImage)));
-                                            addSticker(selectedImage, "mask", 100, 100,xSlider, ySlider, image => setSelectedImage(image))}}></img>
+                                            addSticker(selectedImage, "mask", 100, 100,xSlider, 100 - ySlider, image => setSelectedImage(image))}}></img>
                                         <img className="sticker" alt="quakers" src={quakers} onClick={() => {
                                             setPreviousImage(JSON.parse(JSON.stringify(selectedImage)));
-                                            addSticker(selectedImage, "quakers", 100, 100, xSlider, ySlider, image => setSelectedImage(image))}}></img>
+                                            addSticker(selectedImage, "quakers", 100, 100, xSlider, 100 - ySlider, image => setSelectedImage(image))}}></img>
 
 
 
@@ -343,7 +340,7 @@ function App() {
 
                 </div>
                 <div className="download-container">
-                 <a href={selectedImage} download target="_blank"> <button class="btn">Download  </button> </a> {/*doesn't seem to work?*/}
+                 <a href={selectedImage} download target="_blank"  rel="noopener noreferrer"> <button class="btn">Download  </button> </a> {/*doesn't seem to work?*/}
                  <button class="btn" onClick={() => {
                     setSelectedImage(previousImage)
                     console.log(previousImage);
