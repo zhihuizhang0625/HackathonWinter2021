@@ -10,7 +10,7 @@ import pennLogo from '../Stickers/UpennLogo.PNG';
 inputs: firstImage - base image; secondImage - sticker; sizeX and sizeY - size of sticker; locX and locY - location on firstImage sticker will be placed
 output: png file that contains the composite image
 */
-async function addSticker(firstImage, secondString, sizeX, sizeY, locX, locY, callback) {
+async function addSticker(firstImage, secondString, size, locX, locY, callback) {
     try {
         //read first image
         let first = await jimp.read(firstImage);
@@ -28,14 +28,14 @@ async function addSticker(firstImage, secondString, sizeX, sizeY, locX, locY, ca
             second = await jimp.read(pennLogo); 
         }
         //resize sticker
-        second = second.resize(sizeX, sizeY); 
+        //second = second.resize(sizeX, sizeY); 
         //create composite
         const width = first.bitmap.width;
         const height = first.bitmap.height;
         const xCoord = (locX/100) * width;
         const yCoord = (locY/100) *height;
-        const xSize = width * 0.1;
-        const ySize = width * 0.1;
+        const xSize = width * (size/30);
+        const ySize = width * (size/30);
         second = second.resize(xSize, ySize)
         first.composite(second, xCoord, yCoord);
         //export 
