@@ -1,0 +1,282 @@
+/* Penn Red #990000*/
+/* Penn Blue #011f5b*/
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+
+body {
+  margin: 0;
+  background-color: white;
+}
+
+
+.container{
+  display: grid;
+  grid-template-columns: 3fr;
+  grid-template-rows: 200px auto 20px 1fr;
+  grid-template-areas: 
+  "page headers"
+  "image | features sidebar"
+  "upload and download"
+  "feature option display area | download button";
+  background-color: white;
+  flex-direction: column;
+}
+
+.header-container{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 15vh 10vh;
+  grid-template-areas: 
+  "page header 1: Snap Penn"
+  "page header 2: dedicated photo editor";
+  background-color: white;
+  flex-direction: column;
+
+}
+
+.page-header-1 {
+  background-color: white;
+  min-height: 15vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: xx-large;
+  color: #011f5b;
+  text-align: center;
+}
+
+.page-header-2 {
+  background-color: white;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: large;
+  color: #011f5b;
+}
+
+.image-sidebar-container{
+  display: grid;
+  grid-template-areas: 
+  "extra | image | sidebar";
+  grid-template-columns:25vw 50vw 25vw;
+  grid-template-rows:  2fr ;
+  background-color: white;
+  flex-direction: row;
+  min-height: 400px;
+}
+
+.extra-space-holder1{
+  background-color: white;
+  width: 25vw;
+  align-items: left;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+
+.main-image-container{
+  grid-area:image container;
+  background-color: white;
+  width: 50vw;
+  height: 1fr;
+  align-items: center;
+  flex-direction: row;
+  grid-column: 2;
+  grid-row: 1;
+  border: double 2px #990000;
+}
+
+.main-image{
+  grid-area:image;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/UPenn_shield_with_banner.svg/1920px-UPenn_shield_with_banner.svg.png"); 
+  background-color: wheat;
+  width: auto;
+  height: auto;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.sidebar-container{
+  grid-area:sidebar container;
+  background-color: white;
+  width: 25vw;
+  height: 1fr;
+  align-items: center;
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.sidebar{
+  grid-area: sidebar;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  font-size: large;
+  width: auto;
+  height: auto;
+  margin-left: 5px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.sidebar-item{
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: white;
+  padding: 1rem;
+  position: relative;
+  color: #011f5b;
+  font-size: large;
+  font-weight: bold;
+  transition: background-color 150ms;
+  width: auto;
+  max-width: 100px;
+  height: auto;
+  min-height: 100px;
+  align-items: stretch;
+}
+
+.sidebar-item:hover{
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: #011f5b;
+  padding: 1rem;
+  position: relative;
+  color: white;
+  font-size: large;
+  font-weight: bold;
+  transition: background-color 150ms;
+  width: auto;
+  max-width: 100px;
+  height: auto;
+  min-height: 100px;
+  align-items: stretch;
+}
+
+.sidebar-item:active, .sidebar-item:focus{
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: #011f5b;
+  padding: 1rem;
+  position: relative;
+  color: white;
+  font-size: large;
+  font-weight: bolder;
+  text-decoration-line: underline;
+  text-decoration-style: solid double;
+  transition: background-color 150ms;
+  border: 1px thick double #990000;
+  width: auto;
+  max-width: 100px;
+  height: auto;
+  min-height: 100px;
+  align-items: stretch;
+}
+
+.sidebar-item:last-child::after {
+  display: none;
+}
+
+
+.download-address-container{
+  grid-area:download address container;
+  background-color: yellow;
+  width: auto;
+  max-width: 50vw;
+  height: 20px;
+  align-items: stretch;
+  position: relative;
+  justify-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+.download-address{
+  grid-area:download address;
+  background-color: yellow;
+  width: auto;
+  max-width: 50vw;
+  height: 20px;
+  align-items: stretch;
+  position: relative;
+  justify-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+
+.feature-button-container{
+  display: grid;
+  grid-template-areas: 
+  "extra | features | download button";
+  grid-template-columns:25vw 50vw 25vw;
+  grid-template-rows:  auto;
+  background-color: white;
+  width: 100%;
+}
+
+.extra-space-holder2{
+  background-color: white;
+  width: 25vw;
+  align-items: left;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.feature-display-container{
+  grid-area:image container;
+  background-color: white;
+  width: 50vw;
+  height: auto;
+  align-items: center;
+  flex-direction: row;
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.feature-display{
+  grid-area:feature display;
+  background-color: blue;
+  max-width: 50vw;
+  width: auto;
+  height: auto;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.download-container{
+  grid-area:download container;
+  background-color: white;
+  width: 25vw;
+  height: auto;
+  align-items: center;
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.btn {
+  margin-left: 5px;
+  position: relative;
+}
