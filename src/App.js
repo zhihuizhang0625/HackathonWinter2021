@@ -123,7 +123,7 @@ function App() {
                     {/* //getImageStyle will be returned by the separate component functions */}
                     <div className="main-image" > {/*change*/}
                         {/* <button class="btn"><i class="fa fa-download"></i> Download</button> */}
-                        <img alt="" width={"600px"} src={selectedImage} />
+                        <img alt="" width={"500px"} src={selectedImage} />
 
 
 

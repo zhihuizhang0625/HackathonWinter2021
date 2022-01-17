@@ -30,6 +30,7 @@ async function addFilter(firstImage, secondImage, callback) {
         const width = srcImg.bitmap.width;
         const height = srcImg.bitmap.height;
         second.resize(width, height);
+        second.opacity(0.6);
         //create composite
         srcImg.composite(second, 0, 0);
         //export 
