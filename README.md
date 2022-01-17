@@ -1,4 +1,4 @@
-📂 *****Project Name: Snap Penn*****
+📂 #Project Name: Snap Penn
 
 👨‍👨‍👦‍👦Project Team member:
 
