@@ -286,9 +286,6 @@ function App() {
                                     <img className="sticker" alt="blue2" src={blue2} onClick={() => {
                                         setPreviousImage(JSON.parse(JSON.stringify(selectedImage)));
                                         addFrame(selectedImage, "blue2", image => setSelectedImage(image))}}></img>
-                                    <button class="button1" onClick={() => {
-                                        setPreviousImage(JSON.parse(JSON.stringify(selectedImage)));
-                                        addFrame(selectedImage, "./Stickers/testFrame.png", image => setSelectedImage(image))}}>Add Frame</button>
                                 </div>
 
 
@@ -347,11 +344,11 @@ function App() {
                 </div>
                 <div className="download-container">
                  <a href={selectedImage} download target="_blank"> <button class="btn">Download  </button> </a> {/*doesn't seem to work?*/}
-                </div>
-                <button class="btn" onClick={() => {
+                 <button class="btn" onClick={() => {
                     setSelectedImage(previousImage)
                     console.log(previousImage);
                     }}>Undo</button>
+                </div>
             </div>
         </div>
 
