@@ -43,7 +43,7 @@ function App() {
     const [selectedImage, setSelectedImage] = useState(null);
     const [xSlider, setXSlider] = useState(50);
     const [ySlider, setYSlider] = useState(50);
-    const [size, setSize] = useState(5)
+    const [size, setSize] = useState(10)
 
 
     /*const [axisX, setAxisX] = useState({
