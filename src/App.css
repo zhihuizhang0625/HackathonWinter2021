@@ -502,6 +502,7 @@ body {
   margin-right: 5px;
   border: solid 1px palevioletred;
   transition: border 100ms;
+  cursor: pointer;
 }
 
 
