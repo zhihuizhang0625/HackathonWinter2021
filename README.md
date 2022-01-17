@@ -29,8 +29,11 @@ Chris Yu		    2023
 
 
 👩🏻‍💻How to run the code:
+
       1️⃣Need to download React App and Node.js
+      
       2️⃣In the terminal, run ‘npm install’ if it’s the first time using this program
+      
       3️⃣And then type ‘npm start’ to run the entire program and initiate the website on your selected browser
 
 🔗Website Link:
