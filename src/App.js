@@ -43,6 +43,7 @@ function App() {
     const [selectedImage, setSelectedImage] = useState(null);
     const [xSlider, setXSlider] = useState(50);
     const [ySlider, setYSlider] = useState(50);
+    const [size, setSize] = useState(5)
 
 
     /*const [axisX, setAxisX] = useState({
@@ -225,6 +226,7 @@ function App() {
                                             /> */}
                                             <p>  high  </p>
                                         </div>
+                                        
 
                                         <div>
                                             <p>Please choose the sticker to add.</p>
@@ -234,29 +236,32 @@ function App() {
 
 
                                     </div>
-
                                     <div className="sticker-items-display">
 
 
                                         <img className="sticker" alt="rainbow" src={rainbow} onClick={() =>{
                                             setPreviousImage(JSON.parse(JSON.stringify(selectedImage)));
-                                            addSticker(selectedImage, "rainbow", 100, 100, xSlider, 100 -ySlider, image => setSelectedImage(image))}}></img>
+                                            addSticker(selectedImage, "rainbow", size, xSlider, 100 -ySlider, image => setSelectedImage(image))}}></img>
                                         <img className="sticker" alt="upennLogo" src={upennLogo} onClick={() => {
                                             setPreviousImage(JSON.parse(JSON.stringify(selectedImage)));
-                                            addSticker(selectedImage, "upennLogo", 100, 100, xSlider, 100 - ySlider, image => setSelectedImage(image))}}></img>
+                                            addSticker(selectedImage, "upennLogo", size,  xSlider, 100 - ySlider, image => setSelectedImage(image))}}></img>
                                         <img className="sticker" alt="pennheart" src={pennHeart} onClick={() => {
                                             setPreviousImage(JSON.parse(JSON.stringify(selectedImage)));
-                                            addSticker(selectedImage, "pennHeart", 100, 100, xSlider,100 - ySlider, image => setSelectedImage(image))}}></img>
+                                            addSticker(selectedImage, "pennHeart", size, xSlider,100 - ySlider, image => setSelectedImage(image))}}></img>
                                         <img className="sticker" alt="mask" src={mask} onClick={() => {
                                             setPreviousImage(JSON.parse(JSON.stringify(selectedImage)));
-                                            addSticker(selectedImage, "mask", 100, 100,xSlider, 100 - ySlider, image => setSelectedImage(image))}}></img>
+                                            addSticker(selectedImage, "mask", size, xSlider, 100 - ySlider, image => setSelectedImage(image))}}></img>
                                         <img className="sticker" alt="quakers" src={quakers} onClick={() => {
                                             setPreviousImage(JSON.parse(JSON.stringify(selectedImage)));
-                                            addSticker(selectedImage, "quakers", 100, 100, xSlider, 100 - ySlider, image => setSelectedImage(image))}}></img>
+                                            addSticker(selectedImage, "quakers", size, xSlider, 100 - ySlider, image => setSelectedImage(image))}}></img>
 
 
 
                                     </div>
+                                    <div>
+                                            <p>Please choose the size of the sticker</p>
+                                            <input type="range" min="1" max="10" onChange={e => setSize(e.target.value)} />
+                                        </div>
                                 </div>
 
                             </>
