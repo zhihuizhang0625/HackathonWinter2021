@@ -34,6 +34,9 @@ async function addSticker(firstImage, secondString, sizeX, sizeY, locX, locY, ca
         const height = first.bitmap.height;
         const xCoord = (locX/100) * width;
         const yCoord = (locY/100) *height;
+        const xSize = width * 0.1;
+        const ySize = width * 0.1;
+        second = second.resize(xSize, ySize)
         first.composite(second, xCoord, yCoord);
         //export 
         /*first.write("test.png", function() {

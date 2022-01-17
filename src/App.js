@@ -240,19 +240,19 @@ function App() {
 
                                         <img className="sticker" alt="rainbow" src={rainbow} onClick={() =>{
                                             setPreviousImage(JSON.parse(JSON.stringify(selectedImage)));
-                                            addSticker(selectedImage, "rainbow", 100, 100, xSlider, ySlider, image => setSelectedImage(image))}}></img>
+                                            addSticker(selectedImage, "rainbow", 100, 100, xSlider, 100 -ySlider, image => setSelectedImage(image))}}></img>
                                         <img className="sticker" alt="upennLogo" src={upennLogo} onClick={() => {
                                             setPreviousImage(JSON.parse(JSON.stringify(selectedImage)));
-                                            addSticker(selectedImage, "upennLogo", 100, 100, xSlider, ySlider, image => setSelectedImage(image))}}></img>
+                                            addSticker(selectedImage, "upennLogo", 100, 100, xSlider, 100 - ySlider, image => setSelectedImage(image))}}></img>
                                         <img className="sticker" alt="pennheart" src={pennHeart} onClick={() => {
                                             setPreviousImage(JSON.parse(JSON.stringify(selectedImage)));
-                                            addSticker(selectedImage, "pennHeart", 100, 100, xSlider, ySlider, image => setSelectedImage(image))}}></img>
+                                            addSticker(selectedImage, "pennHeart", 100, 100, xSlider,100 - ySlider, image => setSelectedImage(image))}}></img>
                                         <img className="sticker" alt="mask" src={mask} onClick={() => {
                                             setPreviousImage(JSON.parse(JSON.stringify(selectedImage)));
-                                            addSticker(selectedImage, "mask", 100, 100,xSlider, ySlider, image => setSelectedImage(image))}}></img>
+                                            addSticker(selectedImage, "mask", 100, 100,xSlider, 100 - ySlider, image => setSelectedImage(image))}}></img>
                                         <img className="sticker" alt="quakers" src={quakers} onClick={() => {
                                             setPreviousImage(JSON.parse(JSON.stringify(selectedImage)));
-                                            addSticker(selectedImage, "quakers", 100, 100, xSlider, ySlider, image => setSelectedImage(image))}}></img>
+                                            addSticker(selectedImage, "quakers", 100, 100, xSlider, 100 - ySlider, image => setSelectedImage(image))}}></img>
 
 
 
