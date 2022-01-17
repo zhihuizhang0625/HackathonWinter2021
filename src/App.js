@@ -16,6 +16,7 @@ import red2 from './Stickers/Penn Frame Red 2.png';
 import blue1 from './Stickers/Penn frame blue.png';
 import blue2 from './Stickers/Penn Frame Blue 2.png';
 import filter1 from './Stickers/vertical.png';
+import addFilter from './Functions/filter'
 
 const DEFAULT_OPTIONS = [
     {
@@ -242,10 +243,10 @@ function App() {
                             <div className="frame-display-container">
 
                                 <div className="frame-items-container">
-                                    <img className="sticker" alt="red1" src={red1} onClick={() => addFrame(selectedImage, "red1", 100, 100, 200, 200, image => setSelectedImage(image))}></img>
-                                    <img className="sticker" alt="red2" src={red2} onClick={() => addFrame(selectedImage, "red2", 100, 100, 200, 200, image => setSelectedImage(image))}></img>
-                                    <img className="sticker" alt="blue1" src={blue1} onClick={() => addFrame(selectedImage, "blue1", 100, 100, 200, 200, image => setSelectedImage(image))}></img>
-                                    <img className="sticker" alt="blue2" src={blue2} onClick={() => addFrame(selectedImage, "blue2", 100, 100, 200, 200, image => setSelectedImage(image))}></img>
+                                    <img className="sticker" alt="red1" src={red1} onClick={() => addFrame(selectedImage, "red1", image => setSelectedImage(image))}></img>
+                                    <img className="sticker" alt="red2" src={red2} onClick={() => addFrame(selectedImage, "red2", image => setSelectedImage(image))}></img>
+                                    <img className="sticker" alt="blue1" src={blue1} onClick={() => addFrame(selectedImage, "blue1", image => setSelectedImage(image))}></img>
+                                    <img className="sticker" alt="blue2" src={blue2} onClick={() => addFrame(selectedImage, "blue2", image => setSelectedImage(image))}></img>
                                     <button class="button1" onClick={() => addFrame(selectedImage, "./Stickers/testFrame.png", image => setSelectedImage(image))}>Add Frame</button>
                                 </div>
 
@@ -265,7 +266,7 @@ function App() {
 
                                 <div className="filter-items-container">
                                     {/* need to add addFilter function */}
-                                    <img className="sticker" alt="filter1" src={filter1} onClick={() => addFrame(selectedImage, "filter1", 100, 100, 200, 200, image => setSelectedImage(image))}></img>
+                                    <img className="sticker" alt="filter1" src={filter1} onClick={() => addFilter(selectedImage, "vertical", image => setSelectedImage(image))}></img>
                                     {/* <img className="sticker" alt="red2" src={red2} onClick={() => addFrame(selectedImage, "red2", 100, 100, 200, 200, image => setSelectedImage(image))}></img>
                                     <img className="sticker" alt="blue1" src={blue1} onClick={() => addFrame(selectedImage, "blue1", 100, 100, 200, 200, image => setSelectedImage(image))}></img>
                                     <img className="sticker" alt="blue2" src={blue2} onClick={() => addFrame(selectedImage, "blue2", 100, 100, 200, 200, image => setSelectedImage(image))}></img> */}
