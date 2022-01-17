@@ -9,7 +9,7 @@ import red from '../Stickers/red.png';
 inputs: firstImage - base image; secondString - filter; sizeX and sizeY - size of filter; locX and locY - location on firstImage filter will be placed
 output: png file that contains the composite image
 */
-async function addFilter(firstImage, secondImage, sizeX, sizeY, locX, locY, callback) {
+async function addFilter(firstImage, secondImage, callback) {
     try {
         console.log('got here')
         //read first image

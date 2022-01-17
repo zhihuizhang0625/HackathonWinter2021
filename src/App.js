@@ -16,6 +16,7 @@ import red2 from './Stickers/Penn Frame Red 2.png';
 import blue1 from './Stickers/Penn frame blue.png';
 import blue2 from './Stickers/Penn Frame Blue 2.png';
 import filter1 from './Stickers/vertical.png';
+import addFilter from './Functions/filter'
 
 const DEFAULT_OPTIONS = [
     {
@@ -36,7 +37,7 @@ function App() {
 
     const [selectedOptionIndex, setSelectedOptionIndex] = useState(0)
     const [options, setOptions] = useState(DEFAULT_OPTIONS)
-    const [mode, setMode] = useState('stickers');
+    const [mode, setMode] = useState('Sticker');
     const selectedOption = options[selectedOptionIndex]
     const [selectedImage, setSelectedImage] = useState(null);
 
@@ -139,7 +140,7 @@ function App() {
                                 <SidebarItem
                                     name={option.name}
                                     active={index === selectedOptionIndex}
-                                    handleClick={() => setSelectedOptionIndex(index)}
+                                    handleClick={() => setMode(option.name)}
                                 />
                             )
                         })}
@@ -177,7 +178,7 @@ function App() {
                 <div className="extra-space-holder2"></div>
                 <div className="feature-display-container">
                     <div className="feature-display">
-                        {(mode === "stickers") && (
+                        {(mode === "Sticker") && (
                             <>
                                 <div className="sticker-display-container">
                                     <div className="slider-container">
@@ -224,7 +225,7 @@ function App() {
                                         <img className="sticker" alt="pennheart" src={pennHeart} onClick={() => addSticker(selectedImage, "pennHeart", 100, 100, 200, 200, image => setSelectedImage(image))}></img>
                                         <img className="sticker" alt="mask" src={mask} onClick={() => addSticker(selectedImage, "mask", 100, 100, 200, 200, image => setSelectedImage(image))}></img>
                                         <img className="sticker" alt="quakers" src={quakers} onClick={() => addSticker(selectedImage, "quakers", 100, 100, 200, 200, image => setSelectedImage(image))}></img>
-                                        <button class="button2" onClick={() => addSticker(selectedImage, join(process.cwd(), "Stickers", "Mask.PNG"), 100, 100, 200, 200, image => setSelectedImage(image))}>Add Sticker</button>
+                                        <button class="button2" onClick={() => addSticker(selectedImage, "yes", 100, 100, 200, 200, image => setSelectedImage(image))}>Add Sticker</button>
 
 
 
@@ -235,17 +236,17 @@ function App() {
 
                         )}
 
-                        {(mode === "frames") && (
+                        {(mode === "Frame") && (
 
 
 
                             <div className="frame-display-container">
 
                                 <div className="frame-items-container">
-                                    <img className="sticker" alt="red1" src={red1} onClick={() => addFrame(selectedImage, "red1", 100, 100, 200, 200, image => setSelectedImage(image))}></img>
-                                    <img className="sticker" alt="red2" src={red2} onClick={() => addFrame(selectedImage, "red2", 100, 100, 200, 200, image => setSelectedImage(image))}></img>
-                                    <img className="sticker" alt="blue1" src={blue1} onClick={() => addFrame(selectedImage, "blue1", 100, 100, 200, 200, image => setSelectedImage(image))}></img>
-                                    <img className="sticker" alt="blue2" src={blue2} onClick={() => addFrame(selectedImage, "blue2", 100, 100, 200, 200, image => setSelectedImage(image))}></img>
+                                    <img className="sticker" alt="red1" src={red1} onClick={() => addFrame(selectedImage, "red1", image => setSelectedImage(image))}></img>
+                                    <img className="sticker" alt="red2" src={red2} onClick={() => addFrame(selectedImage, "red2", image => setSelectedImage(image))}></img>
+                                    <img className="sticker" alt="blue1" src={blue1} onClick={() => addFrame(selectedImage, "blue1", image => setSelectedImage(image))}></img>
+                                    <img className="sticker" alt="blue2" src={blue2} onClick={() => addFrame(selectedImage, "blue2", image => setSelectedImage(image))}></img>
                                     <button class="button1" onClick={() => addFrame(selectedImage, "./Stickers/testFrame.png", image => setSelectedImage(image))}>Add Frame</button>
                                 </div>
 
@@ -257,7 +258,7 @@ function App() {
 
                         }
 
-                        {(mode === "filters") && (
+                        {(mode === "Filter") && (
 
 
 
@@ -265,7 +266,7 @@ function App() {
 
                                 <div className="filter-items-container">
                                     {/* need to add addFilter function */}
-                                    <img className="sticker" alt="filter1" src={filter1} onClick={() => addFrame(selectedImage, "filter1", 100, 100, 200, 200, image => setSelectedImage(image))}></img>
+                                    <img className="sticker" alt="filter1" src={filter1} onClick={() => addFilter(selectedImage, "vertical", image => setSelectedImage(image))}></img>
                                     {/* <img className="sticker" alt="red2" src={red2} onClick={() => addFrame(selectedImage, "red2", 100, 100, 200, 200, image => setSelectedImage(image))}></img>
                                     <img className="sticker" alt="blue1" src={blue1} onClick={() => addFrame(selectedImage, "blue1", 100, 100, 200, 200, image => setSelectedImage(image))}></img>
                                     <img className="sticker" alt="blue2" src={blue2} onClick={() => addFrame(selectedImage, "blue2", 100, 100, 200, 200, image => setSelectedImage(image))}></img> */}
@@ -295,8 +296,7 @@ function App() {
 
                 </div>
                 <div className="download-container">
-                    <button class="btn"><i class="fa fa-download"></i>Download </button> {/*doesn't seem to work?*/}
-                    <a href={selectedImage} download target="_blank"></a> {/*doesn't seem to work?*/}
+                 <a href={selectedImage} download target="_blank"> <button class="btn">Download  </button> </a> {/*doesn't seem to work?*/}
                 </div>
             </div>
         </div>
