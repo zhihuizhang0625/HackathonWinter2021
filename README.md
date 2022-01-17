@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+Project Name: Snap Penn
+Project Team member:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Name 			      Year
+Clara Zhang		  2023
+May Lai		      2023
+Mati Davis		  2023
+Bala Thenappan 	2023
+Chris Yu		    2023
 
-## Available Scripts
 
-In the project directory, you can run:
+General Idea:
 
-### `npm start`
+People often post “themed” photos on social media. They’ll update their Facebook profile picture with an “I Voted” sticker during election week or with a frame representing their club during club recruitment season. However, there aren’t any tools to easily create such photos with a Penn theme. So we created an app that allows people to add Penn stickers, blue/red filters, or Penn frames to their photos. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+To use this tool, users need to upload a jpg or png to the app, choose what type of edits they’d like to make to their photo, and then download the edited photo from the app. We hope “Penn Snap” gives students a way to express their school pride and creates a strong sense of community amongst MCIT students. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Anticipated Stack: 
+We used “React” to design the app. 
+Front end: 
+We mainly rely on javascript and css to beautify the website design and use online libraries to create better-looking features like buttons
+Back end:
+Javascript’s “JIMP” library powered the image editing done on the backend of our app
+Deploy
+We use an app called “netlify” to publicize our web app
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+How to run the code:
+Need to download React App and Node.js
+In the terminal, run ‘npm install’ if it’s the first time using this program
+And then type ‘npm start’ to run the entire program and initiate the website on your selected browser
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Website Link:
+https://pennsnap.netlify.app/
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Presentation URL: https://docs.google.com/presentation/d/1oetACHqfe3oqtLNBIMV8ggj096MSN1drmKhFIPFP5Fc/edit#slide=id.ge55866b698_1_18
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
