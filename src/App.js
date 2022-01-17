@@ -224,7 +224,7 @@ function App() {
                                         <img className="sticker" alt="pennheart" src={pennHeart} onClick={() => addSticker(selectedImage, "pennHeart", 100, 100, 200, 200, image => setSelectedImage(image))}></img>
                                         <img className="sticker" alt="mask" src={mask} onClick={() => addSticker(selectedImage, "mask", 100, 100, 200, 200, image => setSelectedImage(image))}></img>
                                         <img className="sticker" alt="quakers" src={quakers} onClick={() => addSticker(selectedImage, "quakers", 100, 100, 200, 200, image => setSelectedImage(image))}></img>
-                                        <button class="button2" onClick={() => addSticker(selectedImage, join(process.cwd(), "Stickers", "Mask.PNG"), 100, 100, 200, 200, image => setSelectedImage(image))}>Add Sticker</button>
+                                        <button class="button2" onClick={() => addSticker(selectedImage, "yes", 100, 100, 200, 200, image => setSelectedImage(image))}>Add Sticker</button>
 
 
 
@@ -295,8 +295,7 @@ function App() {
 
                 </div>
                 <div className="download-container">
-                    <button class="btn"><i class="fa fa-download"></i>Download </button> {/*doesn't seem to work?*/}
-                    <a href={selectedImage} download target="_blank"></a> {/*doesn't seem to work?*/}
+                 <a href={selectedImage} download target="_blank"> <button class="btn">Download  </button> </a> {/*doesn't seem to work?*/}
                 </div>
             </div>
         </div>
