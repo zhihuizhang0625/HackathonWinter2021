@@ -16,13 +16,13 @@ async function addSticker(firstImage, secondString, sizeX, sizeY, locX, locY, ca
         let first = await jimp.read(firstImage);
         //based on if statement, read sticker 
         let second = ""; 
-        if (secondString == "mask") {
+        if (secondString === "mask") {
             second = await jimp.read(mask);
-        } else if (secondString == "pennHeart") {
+        } else if (secondString === "pennHeart") {
             second = await jimp.read(pennHeart); 
-        } else if (secondString == "quakers") {
+        } else if (secondString === "quakers") {
             second = await jimp.read(quakers); 
-        } else if (secondString == "rainbow") {
+        } else if (secondString === "rainbow") {
             second = await jimp.read(rainbow); 
         } else {
             second = await jimp.read(pennLogo); 

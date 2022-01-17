@@ -17,11 +17,11 @@ async function addFilter(firstImage, secondImage, callback) {
         console.log(srcImg);
         //read filter
         let second = ""; 
-        if (secondImage == "horizontal") {
+        if (secondImage === "horizontal") {
             second = await jimp.read(horizontal); 
-        } else if (secondImage == "blue") {
+        } else if (secondImage === "blue") {
             second = await jimp.read(blue); 
-        } else if (secondImage == "red") {
+        } else if (secondImage === "red") {
             second = await jimp.read(red); 
         } else {
             second = await jimp.read(vertical); 

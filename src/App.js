@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import './App.css';
-import { join } from "path";
-import Slider from './Components/Slider'
 import SidebarItem from './Components/SidebarItem'
 import addFrame from './Functions/frame'
 import addSticker from './Functions/sticker'
@@ -38,17 +36,16 @@ const DEFAULT_OPTIONS = [
 ]
 function App() {
 
-    const [selectedOptionIndex, setSelectedOptionIndex] = useState(0)
-    const [options, setOptions] = useState(DEFAULT_OPTIONS)
+    const [selectedOptionIndex] = useState(0)
+    const [options] = useState(DEFAULT_OPTIONS)
     const [previousImage, setPreviousImage] = useState(null);
     const [mode, setMode] = useState('Sticker');
-    const selectedOption = options[selectedOptionIndex]
     const [selectedImage, setSelectedImage] = useState(null);
     const [xSlider, setXSlider] = useState(50);
     const [ySlider, setYSlider] = useState(50);
 
 
-    const [axisX, setAxisX] = useState({
+    /*const [axisX, setAxisX] = useState({
         name: 'axisX',
         key: 0,
         value: 50,
@@ -67,7 +64,7 @@ function App() {
             max: 100
         },
         unit: '%'
-    })
+    }) */
 
     // const axisX = () => {
 
@@ -343,7 +340,7 @@ function App() {
 
                 </div>
                 <div className="download-container">
-                 <a href={selectedImage} download target="_blank"> <button class="btn">Download  </button> </a> {/*doesn't seem to work?*/}
+                 <a href={selectedImage} download target="_blank"  rel="noopener noreferrer"> <button class="btn">Download  </button> </a> {/*doesn't seem to work?*/}
                  <button class="btn" onClick={() => {
                     setSelectedImage(previousImage)
                     console.log(previousImage);

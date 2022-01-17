@@ -10,11 +10,11 @@ const addFrame = async (src, frameString, callback) => {
         const srcImg = await jimp.read(src);
         console.log(srcImg);
         let frameImg = ""; 
-        if (frameString == "blue1") {
+        if (frameString === "blue1") {
             frameImg = await jimp.read(blueFrame1); 
-        } else if (frameString == "blue2") {
+        } else if (frameString === "blue2") {
             frameImg = await jimp.read(blueFrame2); 
-        } else if (frameString == "red1") {
+        } else if (frameString === "red1") {
             frameImg = await jimp.read(redFrame1); 
         } else {
             frameImg = await jimp.read(redFrame2); 
