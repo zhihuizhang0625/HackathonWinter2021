@@ -36,7 +36,7 @@ function App() {
 
     const [selectedOptionIndex, setSelectedOptionIndex] = useState(0)
     const [options, setOptions] = useState(DEFAULT_OPTIONS)
-    const [mode, setMode] = useState('stickers');
+    const [mode, setMode] = useState('Sticker');
     const selectedOption = options[selectedOptionIndex]
     const [selectedImage, setSelectedImage] = useState(null);
 
@@ -139,7 +139,7 @@ function App() {
                                 <SidebarItem
                                     name={option.name}
                                     active={index === selectedOptionIndex}
-                                    handleClick={() => setSelectedOptionIndex(index)}
+                                    handleClick={() => setMode(option.name)}
                                 />
                             )
                         })}
@@ -177,7 +177,7 @@ function App() {
                 <div className="extra-space-holder2"></div>
                 <div className="feature-display-container">
                     <div className="feature-display">
-                        {(mode === "stickers") && (
+                        {(mode === "Sticker") && (
                             <>
                                 <div className="sticker-display-container">
                                     <div className="slider-container">
@@ -235,7 +235,7 @@ function App() {
 
                         )}
 
-                        {(mode === "frames") && (
+                        {(mode === "Frame") && (
 
 
 
@@ -257,7 +257,7 @@ function App() {
 
                         }
 
-                        {(mode === "filters") && (
+                        {(mode === "Filter") && (
 
 
 
