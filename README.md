@@ -39,5 +39,5 @@ Chris Yu		    2023
 🔗Presentation URL: 
       https://docs.google.com/presentation/d/1oetACHqfe3oqtLNBIMV8ggj096MSN1drmKhFIPFP5Fc/edit#slide=id.ge55866b698_1_18
 
-
+NOTES: Our original project is in another github repo. But things got too messy so we moved to this new repository.
 
