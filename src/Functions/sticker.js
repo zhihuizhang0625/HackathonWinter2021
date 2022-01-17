@@ -30,7 +30,11 @@ async function addSticker(firstImage, secondString, sizeX, sizeY, locX, locY, ca
         //resize sticker
         second = second.resize(sizeX, sizeY); 
         //create composite
-        first.composite(second, locX, locY);
+        const width = first.bitmap.width;
+        const height = first.bitmap.height;
+        const xCoord = (locX/100) * width;
+        const yCoord = (locY/100) *height;
+        first.composite(second, xCoord, yCoord);
         //export 
         /*first.write("test.png", function() {
             console.log("wrote image"); 

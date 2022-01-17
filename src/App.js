@@ -41,6 +41,8 @@ function App() {
     const [mode, setMode] = useState('Sticker');
     const selectedOption = options[selectedOptionIndex]
     const [selectedImage, setSelectedImage] = useState(null);
+    const [xSlider, setXSlider] = useState(50);
+    const [ySlider, setYSlider] = useState(50);
 
 
     const [axisX, setAxisX] = useState({
@@ -185,28 +187,42 @@ function App() {
                                 <div className="sticker-display-container">
                                     <div className="slider-container">
                                         <p>  Please set the position of the sticker via the slider bars below.  </p>
-                                        <div className="axisX">
+                                       {/* <div className="axisX">
                                             <p> left </p>
                                             <Slider
                                                 name="axisX"
                                                 min={axisX.range.min}
                                                 max={axisX.range.max}
                                                 value={axisX.value}
-                                                onChange={(event) => setAxisX({ ...axisX, value: event.target.value })}
+                                                onChange={(event) => {
+                                                    console.log(event.target.value);
+                                                    setAxisX({ ...axisX, value: event.target.value })}}
                                                 className="slider"
                                             />
                                             <p>  right  </p>
+                                        </div> */}
+                                        <div className="axisX">
+                                        <p>left</p>
+                                        <input type="range" min="1" max="100" onChange={e => {
+                                        setXSlider(e.target.value)
+                                        console.log(xSlider)}} />
+                                        <p>right</p>
                                         </div>
+                                        <div>
+        </div>
                                         <div className="axisY">
-                                            <p>  low  </p>
-                                            <Slider
+                                            <p>  low </p>
+                                            <input type="range" min="1" max="100" onChange={e => {
+                                        setYSlider(e.target.value)
+                                        console.log(ySlider)}} />
+                                            {/*<Slider
                                                 name="axisY"
                                                 min={axisY.range.min}
                                                 max={axisY.range.max}
                                                 value={axisY.value}
                                                 onChange={(event) => setAxisY({ ...axisY, value: event.target.value })}
                                                 className="slider"
-                                            />
+                                            /> */}
                                             <p>  high  </p>
                                         </div>
 
@@ -224,19 +240,19 @@ function App() {
 
                                         <img className="sticker" alt="rainbow" src={rainbow} onClick={() =>{
                                             setPreviousImage(JSON.parse(JSON.stringify(selectedImage)));
-                                            addSticker(selectedImage, "rainbow", 100, 100, 200, 200, image => setSelectedImage(image))}}></img>
+                                            addSticker(selectedImage, "rainbow", 100, 100, xSlider, ySlider, image => setSelectedImage(image))}}></img>
                                         <img className="sticker" alt="upennLogo" src={upennLogo} onClick={() => {
                                             setPreviousImage(JSON.parse(JSON.stringify(selectedImage)));
-                                            addSticker(selectedImage, "upennLogo", 100, 100, 200, 200, image => setSelectedImage(image))}}></img>
+                                            addSticker(selectedImage, "upennLogo", 100, 100, xSlider, ySlider, image => setSelectedImage(image))}}></img>
                                         <img className="sticker" alt="pennheart" src={pennHeart} onClick={() => {
                                             setPreviousImage(JSON.parse(JSON.stringify(selectedImage)));
-                                            addSticker(selectedImage, "pennHeart", 100, 100, 200, 200, image => setSelectedImage(image))}}></img>
+                                            addSticker(selectedImage, "pennHeart", 100, 100, xSlider, ySlider, image => setSelectedImage(image))}}></img>
                                         <img className="sticker" alt="mask" src={mask} onClick={() => {
                                             setPreviousImage(JSON.parse(JSON.stringify(selectedImage)));
-                                            addSticker(selectedImage, "mask", 100, 100, 200, 200, image => setSelectedImage(image))}}></img>
+                                            addSticker(selectedImage, "mask", 100, 100,xSlider, ySlider, image => setSelectedImage(image))}}></img>
                                         <img className="sticker" alt="quakers" src={quakers} onClick={() => {
                                             setPreviousImage(JSON.parse(JSON.stringify(selectedImage)));
-                                            addSticker(selectedImage, "quakers", 100, 100, 200, 200, image => setSelectedImage(image))}}></img>
+                                            addSticker(selectedImage, "quakers", 100, 100, xSlider, ySlider, image => setSelectedImage(image))}}></img>
 
 
 
