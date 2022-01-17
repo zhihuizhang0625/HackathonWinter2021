@@ -37,6 +37,7 @@ function App() {
 
     const [selectedOptionIndex, setSelectedOptionIndex] = useState(0)
     const [options, setOptions] = useState(DEFAULT_OPTIONS)
+    const [previousImage, setPreviousImage] = useState(null);
     const [mode, setMode] = useState('Sticker');
     const selectedOption = options[selectedOptionIndex]
     const [selectedImage, setSelectedImage] = useState(null);
@@ -163,6 +164,7 @@ function App() {
              <input type="file" name="myImage" onChange={e => {
               console.log(e.target.files[0])
               setSelectedImage(URL.createObjectURL(e.target.files[0]));
+              setPreviousImage(URL.createObjectURL(e.target.files[0]));
             }} /> 
 
             {/* <input type="file" id="real-file" hidden="hidden" onChange={e => {
@@ -220,12 +222,21 @@ function App() {
                                     <div className="sticker-items-display">
 
 
-                                        <img className="sticker" alt="rainbow" src={rainbow} onClick={() => addSticker(selectedImage, "rainbow", 100, 100, 200, 200, image => setSelectedImage(image))}></img>
-                                        <img className="sticker" alt="upennLogo" src={upennLogo} onClick={() => addSticker(selectedImage, "upennLogo", 100, 100, 200, 200, image => setSelectedImage(image))}></img>
-                                        <img className="sticker" alt="pennheart" src={pennHeart} onClick={() => addSticker(selectedImage, "pennHeart", 100, 100, 200, 200, image => setSelectedImage(image))}></img>
-                                        <img className="sticker" alt="mask" src={mask} onClick={() => addSticker(selectedImage, "mask", 100, 100, 200, 200, image => setSelectedImage(image))}></img>
-                                        <img className="sticker" alt="quakers" src={quakers} onClick={() => addSticker(selectedImage, "quakers", 100, 100, 200, 200, image => setSelectedImage(image))}></img>
-                                        <button class="button2" onClick={() => addSticker(selectedImage, "yes", 100, 100, 200, 200, image => setSelectedImage(image))}>Add Sticker</button>
+                                        <img className="sticker" alt="rainbow" src={rainbow} onClick={() =>{
+                                            setPreviousImage(JSON.parse(JSON.stringify(selectedImage)));
+                                            addSticker(selectedImage, "rainbow", 100, 100, 200, 200, image => setSelectedImage(image))}}></img>
+                                        <img className="sticker" alt="upennLogo" src={upennLogo} onClick={() => {
+                                            setPreviousImage(JSON.parse(JSON.stringify(selectedImage)));
+                                            addSticker(selectedImage, "upennLogo", 100, 100, 200, 200, image => setSelectedImage(image))}}></img>
+                                        <img className="sticker" alt="pennheart" src={pennHeart} onClick={() => {
+                                            setPreviousImage(JSON.parse(JSON.stringify(selectedImage)));
+                                            addSticker(selectedImage, "pennHeart", 100, 100, 200, 200, image => setSelectedImage(image))}}></img>
+                                        <img className="sticker" alt="mask" src={mask} onClick={() => {
+                                            setPreviousImage(JSON.parse(JSON.stringify(selectedImage)));
+                                            addSticker(selectedImage, "mask", 100, 100, 200, 200, image => setSelectedImage(image))}}></img>
+                                        <img className="sticker" alt="quakers" src={quakers} onClick={() => {
+                                            setPreviousImage(JSON.parse(JSON.stringify(selectedImage)));
+                                            addSticker(selectedImage, "quakers", 100, 100, 200, 200, image => setSelectedImage(image))}}></img>
 
 
 
@@ -243,11 +254,22 @@ function App() {
                             <div className="frame-display-container">
 
                                 <div className="frame-items-container">
-                                    <img className="sticker" alt="red1" src={red1} onClick={() => addFrame(selectedImage, "red1", image => setSelectedImage(image))}></img>
-                                    <img className="sticker" alt="red2" src={red2} onClick={() => addFrame(selectedImage, "red2", image => setSelectedImage(image))}></img>
-                                    <img className="sticker" alt="blue1" src={blue1} onClick={() => addFrame(selectedImage, "blue1", image => setSelectedImage(image))}></img>
-                                    <img className="sticker" alt="blue2" src={blue2} onClick={() => addFrame(selectedImage, "blue2", image => setSelectedImage(image))}></img>
-                                    <button class="button1" onClick={() => addFrame(selectedImage, "./Stickers/testFrame.png", image => setSelectedImage(image))}>Add Frame</button>
+                                    <img className="sticker" alt="red1" src={red1} onClick={() => {
+                                        setPreviousImage(JSON.parse(JSON.stringify(selectedImage)));
+                                        addFrame(selectedImage, "red1", image => setSelectedImage(image))}}></img>
+                                    <img className="sticker" alt="red2" src={red2} onClick={() => {
+                                        setPreviousImage(JSON.parse(JSON.stringify(selectedImage)));
+                                        addFrame(selectedImage, "red2", image => setSelectedImage(image))
+                                    }}></img>
+                                    <img className="sticker" alt="blue1" src={blue1} onClick={() => {
+                                        setPreviousImage(JSON.parse(JSON.stringify(selectedImage)));
+                                        addFrame(selectedImage, "blue1", image => setSelectedImage(image))}}></img>
+                                    <img className="sticker" alt="blue2" src={blue2} onClick={() => {
+                                        setPreviousImage(JSON.parse(JSON.stringify(selectedImage)));
+                                        addFrame(selectedImage, "blue2", image => setSelectedImage(image))}}></img>
+                                    <button class="button1" onClick={() => {
+                                        setPreviousImage(JSON.parse(JSON.stringify(selectedImage)));
+                                        addFrame(selectedImage, "./Stickers/testFrame.png", image => setSelectedImage(image))}}>Add Frame</button>
                                 </div>
 
 
@@ -266,7 +288,10 @@ function App() {
 
                                 <div className="filter-items-container">
                                     {/* need to add addFilter function */}
-                                    <img className="sticker" alt="filter1" src={filter1} onClick={() => addFilter(selectedImage, "vertical", image => setSelectedImage(image))}></img>
+                                    <img className="sticker" alt="filter1" src={filter1} onClick={() => {
+                                        setPreviousImage(JSON.parse(JSON.stringify(selectedImage)));
+                                        addFilter(selectedImage, "vertical", image =>setSelectedImage(image))
+                                        }}></img>
                                     {/* <img className="sticker" alt="red2" src={red2} onClick={() => addFrame(selectedImage, "red2", 100, 100, 200, 200, image => setSelectedImage(image))}></img>
                                     <img className="sticker" alt="blue1" src={blue1} onClick={() => addFrame(selectedImage, "blue1", 100, 100, 200, 200, image => setSelectedImage(image))}></img>
                                     <img className="sticker" alt="blue2" src={blue2} onClick={() => addFrame(selectedImage, "blue2", 100, 100, 200, 200, image => setSelectedImage(image))}></img> */}
@@ -298,6 +323,10 @@ function App() {
                 <div className="download-container">
                  <a href={selectedImage} download target="_blank"> <button class="btn">Download  </button> </a> {/*doesn't seem to work?*/}
                 </div>
+                <button class="btn" onClick={() => {
+                    setSelectedImage(previousImage)
+                    console.log(previousImage);
+                    }}>Undo</button>
             </div>
         </div>
 
