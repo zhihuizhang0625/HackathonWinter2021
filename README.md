@@ -3,10 +3,15 @@
 👨‍👨‍👦‍👦Project Team member:
 
 Name 			      Year
+
 Clara Zhang		  2023
+
 May Lai		      2023
+
 Mati Davis		  2023
+
 Bala Thenappan 	2023
+
 Chris Yu		    2023
 
 
