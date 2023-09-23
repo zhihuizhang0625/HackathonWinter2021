@@ -1,3 +1,5 @@
+<img width="1466" alt="Screenshot 2023-09-22 at 3 36 20 PM" src="https://github.com/zhihuizhang0625/HackathonWinter2022/assets/85580892/689479be-8d9d-4dd2-b0b9-5be405b756a1">
+
 📂 Project Name: Snap Penn
 
 👨‍👨‍👦‍👦Project Team member:
